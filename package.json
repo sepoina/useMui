@@ -8,7 +8,7 @@
   "bugs": {
     "url": "https://github.com/sepoina/useMui/issues"
   },
-  "homepage": "./",
+  "homepage": "https://github.com/sepoina/useMui#readme",
   "exhomepage": "https://github.com/sepoina/useMui#readme",
  
   "private": false,
@@ -17,7 +17,7 @@
   "files": [ "dist", "README.md" ],
   
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PUBLIC_URL=/ react-scripts start",
     "prepare": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
