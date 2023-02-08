@@ -1,10 +1,25 @@
-import * as React from 'react';
-import DialogContentText from '@mui/material/DialogContentText';
-import Box from '@mui/material/Box';
+"use strict";
 
-export default function IsText({ item }) {
-    return (
-        <Box sx={{ mt: 1, minWidth: 120 }}>
-            <DialogContentText>{item.variable}</DialogContentText>
-        </Box>);
+require("core-js/modules/es.weak-map.js");
+require("core-js/modules/web.dom-collections.iterator.js");
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = IsText;
+var React = _interopRequireWildcard(require("react"));
+var _DialogContentText = _interopRequireDefault(require("@mui/material/DialogContentText"));
+var _Box = _interopRequireDefault(require("@mui/material/Box"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function IsText(_ref) {
+  let {
+    item
+  } = _ref;
+  return /*#__PURE__*/React.createElement(_Box.default, {
+    sx: {
+      mt: 1,
+      minWidth: 120
+    }
+  }, /*#__PURE__*/React.createElement(_DialogContentText.default, null, item.variable));
 }

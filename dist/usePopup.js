@@ -1,28 +1,32 @@
-import * as React from 'react';
-import AlertPopup from './utiliyDialogPopup/ShowPopup';
+"use strict";
 
-export default function usePopup() {
+require("core-js/modules/es.weak-map.js");
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = usePopup;
+require("core-js/modules/web.dom-collections.iterator.js");
+var React = _interopRequireWildcard(require("react"));
+var _ShowPopup = _interopRequireDefault(require("./utiliyDialogPopup/ShowPopup"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function usePopup() {
   const [state, setState] = React.useState(null);
 
   // funzione di Rendering componente
   const renderPopup = () => {
-    return (
-      <>
-        {state !== null && (
-          <AlertPopup
-            params={state}
-            handleReaction={(obj) => {
-              state.onReaction(obj);
-              setState(null);
-            }}
-          />
-        )}
-      </>
-    );
+    return /*#__PURE__*/React.createElement(React.Fragment, null, state !== null && /*#__PURE__*/React.createElement(_ShowPopup.default, {
+      params: state,
+      handleReaction: obj => {
+        state.onReaction(obj);
+        setState(null);
+      }
+    }));
   };
 
   // funzione di Interrogazione
-  const setPopup = (params) => {
+  const setPopup = params => {
     setState(params);
   };
 

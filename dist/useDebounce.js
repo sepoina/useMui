@@ -1,5 +1,10 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+"use strict";
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = useDebounce;
+var _react = require("react");
 //   Originale e test
 //   https://stackblitz.com/edit/react-ts-9qvcoq?file=App.tsx,useDebounceUpd.js
 
@@ -33,16 +38,15 @@ class debounceUpdClass {
     this.reaction = 0;
     this.takeBack = null;
   }
-
   notify(f) {
     let passed = new Date().getTime() - this.ms;
     let isDuringTimer = this.lastTimeout !== false;
     let isOverCalled = passed <= this.millisecond;
-    this.takeBack=f; // pointer alla funzione
+    this.takeBack = f; // pointer alla funzione
     // se ha già un timing per una verifica
     if (isDuringTimer) return;
     // se non ha un timing e non è di ritorno rapido
-    if (!isOverCalled | (this.ms == 0)) {
+    if (!isOverCalled | this.ms == 0) {
       this.ms = new Date().getTime(); //reset
       this.masterAction();
       return;
@@ -59,7 +63,6 @@ class debounceUpdClass {
     this.ms = new Date().getTime(); //reset
     this.lastTimeout = false;
   }
-
   unMount() {
     clearTimeout(this.lastTimeout);
     return this.id;
@@ -71,15 +74,12 @@ class debounceUpdClass {
  * its invoking by the defined time.
  * If time is not defined, its default value will be 250ms.
  */
-export default function useDebounce (milli) {
-
-  const debounced = useRef();
-
-  const callFrequenty = (f) => {
+function useDebounce(milli) {
+  const debounced = (0, _react.useRef)();
+  const callFrequenty = f => {
     debounced.current.notify(f);
-  }
-
-  useEffect(() => {
+  };
+  (0, _react.useEffect)(() => {
     // mount
     debounced.current = new debounceUpdClass(milli);
     // console.log(debounced);
@@ -89,4 +89,5 @@ export default function useDebounce (milli) {
     };
   }, []);
   return callFrequenty;
-};
+}
+;

@@ -1,28 +1,58 @@
 {
   "name": "@sepoina/usemui",
-  "version": "1.0.22",
+  "version": "1.0.28",
   "description": "Collection of useful React Material-UI hooks",
-  "main": "dist/dist.js",
-  "module": "dist/dist.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sepoina/useMui.git"
-  },
-  "keywords": [],
+  "keywords": ["react", "components", "ui"],
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/sepoina/useMui/issues"
   },
-  "homepage": "https://github.com/sepoina/useMui#readme",
+  "homepage": "./",
+  "exhomepage": "https://github.com/sepoina/useMui#readme",
+ 
+  "private": false,
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "files": [ "dist", "README.md" ],
+  
+  "scripts": {
+    "start": "react-scripts start",
+    "prepare": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sepoina/useMui.git"
+  },
+ 
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
-    "@mui/material": "^5.11.8",
+    "@mui/material": "^5.11.7",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-scripts": "^5.0.1"
+  },
+  "devDependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "@babel/cli": "^7.20.7",
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "beautiful-react-hooks": "^3.12.2"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
