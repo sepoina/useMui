@@ -1,6 +1,6 @@
 {
   "name": "@sepoina/usemui",
-  "version": "1.0.0",
+  "version": "1.0.22",
   "description": "Collection of useful React Material-UI hooks",
   "main": "dist/dist.js",
   "module": "dist/dist.js",
