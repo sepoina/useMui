@@ -1,0 +1,28 @@
+{
+  "name": "@sepoina/usemui",
+  "version": "1.0.0",
+  "description": "Collection of useful React Material-UI hooks",
+  "main": "dist/dist.js",
+  "module": "dist/dist.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sepoina/useMui.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sepoina/useMui/issues"
+  },
+  "homepage": "https://github.com/sepoina/useMui#readme",
+  "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/material": "^5.11.8",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
