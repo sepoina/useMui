@@ -1,2 +1,2 @@
 # useMui
-Collection of useful React Material-UI hooks
+Collection of useful React Material-UI hooks!
